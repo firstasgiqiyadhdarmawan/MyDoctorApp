@@ -18,7 +18,7 @@ const UploadPhoto = () => {
           <Text style={styles.profesi}>Product Designer</Text>
         </View>
         <View>
-          <Button title="Upload and Continue" />
+          <Button title={'Upload and Continue'} />
           <Gap height={30} />
           <Link title="Skip for this" align="center" size={16} />
         </View>

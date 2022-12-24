@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 16,
+    // paddingHorizontal: 16,
   },
   rate: {
     flexDirection: 'row',
