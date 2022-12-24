@@ -11,36 +11,38 @@ import {colors, fonts} from '../../utils';
 
 const Doctor = () => {
   return (
-    <View style={styles.page}>
-      <View style={styles.content}>
-        <HomeProfile />
-        <Gap height={30} />
-        <Text style={styles.welcome}>
-          Mau konsultasi dengan siapa hari ini?
-        </Text>
-        <Gap height={16} />
-        <View style={styles.wrapperScroll}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={styles.category}>
-              <Gap width={16} />
-              <DoctorCategory />
-              <DoctorCategory />
-              <DoctorCategory />
-              <DoctorCategory />
-              <Gap width={6} />
-            </View>
-          </ScrollView>
+    <ScrollView>
+      <View style={styles.page}>
+        <View style={styles.content}>
+          <HomeProfile />
+          <Gap height={30} />
+          <Text style={styles.welcome}>
+            Mau konsultasi dengan siapa hari ini?
+          </Text>
+          <Gap height={16} />
+          <View style={styles.wrapperScroll}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <View style={styles.category}>
+                <Gap width={16} />
+                <DoctorCategory />
+                <DoctorCategory />
+                <DoctorCategory />
+                <DoctorCategory />
+                <Gap width={6} />
+              </View>
+            </ScrollView>
+          </View>
+          <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
+          <RatedDoctor />
+          <RatedDoctor />
+          <RatedDoctor />
+          <Text style={styles.sectionLabel}>Good News</Text>
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
         </View>
-        <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
-        <RatedDoctor />
-        <RatedDoctor />
-        <RatedDoctor />
-        <Text style={styles.sectionLabel}>Good News</Text>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
