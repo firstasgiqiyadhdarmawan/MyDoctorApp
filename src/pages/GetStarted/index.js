@@ -2,6 +2,7 @@ import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ILLogo, ILGetStarted} from '../../assets';
 import {Button, Gap} from '../../components';
+import {colors, fonts} from '../../utils';
 
 const GetStarted = ({navigation}) => {
   return (
@@ -33,14 +34,14 @@ export default GetStarted;
 const styles = StyleSheet.create({
   page: {
     padding: 40,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     justifyContent: 'space-between',
     flex: 1,
   },
   textTitle: {
     fontSize: 28,
     marginTop: 91,
-    color: 'white',
-    fontFamily: 'Nunito-SemiBold',
+    color: colors.white,
+    fontFamily: fonts.primary[600],
   },
 });
