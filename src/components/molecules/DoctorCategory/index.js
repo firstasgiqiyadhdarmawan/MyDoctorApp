@@ -1,16 +1,31 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {ILCatUmum} from '../../../assets';
+import {ILCatAnak, ILCatObat, ILCatPsikiater, ILCatUmum} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';
 
-const DoctorCategory = () => {
+const DoctorCategory = ({category}) => {
+  const Icon = () => {
+    if (category === 'dokter umum') {
+      return <ILCatUmum />;
+    }
+    if (category === 'psikiater') {
+      return <ILCatPsikiater />;
+    }
+    if (category === 'dokter obat') {
+      return <ILCatObat />;
+    }
+    if (category === 'dokter anak') {
+      return <ILCatAnak />;
+    }
+    return <ILCatUmum />;
+  };
   return (
     <View style={styles.container}>
-      <ILCatUmum />
+      <Icon />
       <Gap height={28} />
       <Text style={styles.label}>Saya butuh</Text>
-      <Text style={styles.category}>dokter umum</Text>
+      <Text style={styles.category}>{category}</Text>
     </View>
   );
 };

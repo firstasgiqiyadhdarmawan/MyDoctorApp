@@ -1,15 +1,15 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {DummyDoctor1, IconStar} from '../../../assets';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {IconStar} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const RatedDoctor = () => {
+const RatedDoctor = ({profile, name, category}) => {
   return (
     <View style={styles.container}>
-      <Image source={DummyDoctor1} style={styles.avatar} />
+      <Image source={profile} style={styles.avatar} />
       <View style={styles.profile}>
-        <Text style={styles.name}>Alexa Rachel</Text>
-        <Text style={styles.category}>Pediatrician</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.category}>{category}</Text>
       </View>
 
       <View style={styles.rate}>

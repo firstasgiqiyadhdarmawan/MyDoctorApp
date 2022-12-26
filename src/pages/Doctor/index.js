@@ -1,5 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  DummyDoctor1,
+  DummyDoctor2,
+  DummyDoctor3,
+  DummyNews1,
+  DummyNews2,
+  DummyNews3,
+  JSONCategoryDoctor,
+} from '../../assets';
 import {
   DoctorCategory,
   Gap,
@@ -10,6 +19,26 @@ import {
 import {colors, fonts} from '../../utils';
 
 const Doctor = () => {
+  const [news] = useState([
+    {
+      id: 1,
+      image: DummyNews1,
+      title: 'Is it safe to stay at home during coronavirus?',
+      date: 'Today',
+    },
+    {
+      id: 2,
+      image: DummyNews2,
+      title: 'Consume yellow citrus helps you healthier',
+      date: 'Today',
+    },
+    {
+      id: 3,
+      image: DummyNews3,
+      title: 'Learn how to make a proper orange juice at home',
+      date: 'Today',
+    },
+  ]);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.page}>
@@ -27,23 +56,46 @@ const Doctor = () => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.category}>
                 <Gap width={32} />
-                <DoctorCategory />
-                <DoctorCategory />
-                <DoctorCategory />
-                <DoctorCategory />
+                {JSONCategoryDoctor.data.map(item => {
+                  return (
+                    <DoctorCategory key={item.id} category={item.category} />
+                  );
+                })}
                 <Gap width={22} />
               </View>
             </ScrollView>
           </View>
           <View style={styles.contentSection}>
             <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
-            <RatedDoctor />
-            <RatedDoctor />
-            <RatedDoctor />
+            <RatedDoctor
+              profile={DummyDoctor1}
+              name="Alexa Rachel"
+              category="Pediatrician"
+            />
+            <RatedDoctor
+              profile={DummyDoctor2}
+              name="Sunny Frank"
+              category="Dentist"
+            />
+            <RatedDoctor
+              profile={DummyDoctor3}
+              name="Poe Minn"
+              category="Podiatrist"
+            />
             <Text style={styles.sectionLabel2}>Good News</Text>
+            {news.map(news => {
+              return (
+                <NewsItem
+                  key={news.id}
+                  image={news.image}
+                  title={news.title}
+                  date={news.date}
+                />
+              );
+            })}
+            {/* <NewsItem />
             <NewsItem />
-            <NewsItem />
-            <NewsItem />
+            <NewsItem /> */}
             <Gap height={30} />
           </View>
         </View>

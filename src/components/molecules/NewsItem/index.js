@@ -1,18 +1,15 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {DummyNews1} from '../../../assets';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const NewsItem = () => {
+const NewsItem = ({image, date, title}) => {
   return (
     <View style={styles.container}>
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>
-          Is it safe to stay at home during coronavirus?
-        </Text>
-        <Text style={styles.date}>Today</Text>
+        <Text style={styles.title}>{title} </Text>
+        <Text style={styles.date}>{date}</Text>
       </View>
-      <Image source={DummyNews1} style={styles.image} />
+      <Image source={image} style={styles.image} />
     </View>
   );
 };
@@ -47,5 +44,6 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     flex: 1,
+    justifyContent: 'center',
   },
 });
