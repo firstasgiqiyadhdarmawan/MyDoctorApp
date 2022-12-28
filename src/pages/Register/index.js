@@ -5,7 +5,7 @@ import {colors} from '../../utils';
 
 const Register = ({navigation}) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.page}>
       <View style={styles.page}>
         <Header onPress={() => navigation.goBack()} title="Daftar Akun" />
         <View style={styles.content}>

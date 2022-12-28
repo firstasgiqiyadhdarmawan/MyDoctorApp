@@ -17,13 +17,16 @@ const mainColors = {
 export const colors = {
   primary: mainColors.green1,
   secondary: mainColors.dark1,
+  tertiary: mainColors.blue1,
   white: 'white',
   black: 'black',
+  disable: mainColors.grey3,
   text: {
     primary: mainColors.dark1,
     secondary: mainColors.grey1,
     menuinactive: mainColors.dark2,
     menuactive: mainColors.green1,
+    subTitle: mainColors.dark3,
   },
   button: {
     primary: {

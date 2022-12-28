@@ -6,7 +6,7 @@ import {colors, fonts} from '../../utils';
 
 const Login = ({navigation}) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.pagefull}>
       <View style={styles.page}>
         <ILLogo />
         <Text style={styles.title}>Masuk dan mulai berkonsultasi</Text>
@@ -29,6 +29,10 @@ export default Login;
 const styles = StyleSheet.create({
   page: {
     padding: 40,
+    backgroundColor: colors.white,
+    flex: 1,
+  },
+  pagefull: {
     backgroundColor: colors.white,
     flex: 1,
   },
