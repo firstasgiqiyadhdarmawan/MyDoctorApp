@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     height: 130,
     borderWidth: 1,
     borderColor: colors.border,
-    borderRadius: 130 / 2,
+    borderRadius: 65,
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -10,6 +10,8 @@ import {
   Messages,
   Hospitals,
   Chatting,
+  UserProfile,
+  UpdateProfile,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
@@ -42,7 +44,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -53,19 +55,16 @@ const Router = () => {
         component={GetStarted}
         options={{headerShown: false}}
       />
-
       <Stack.Screen
         name="Register"
         component={Register}
         options={{headerShown: false}}
       />
-
       <Stack.Screen
         name="Login"
         component={Login}
         options={{headerShown: false}}
       />
-
       <Stack.Screen
         name="UploadPhoto"
         component={UploadPhoto}
@@ -84,6 +83,16 @@ const Router = () => {
       <Stack.Screen
         name="Chatting"
         component={Chatting}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UserProfile"
+        component={UserProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UpdateProfile"
+        component={UpdateProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

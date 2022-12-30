@@ -17,6 +17,7 @@ import {
   RatedDoctor,
 } from '../../components';
 import {colors, fonts} from '../../utils';
+import UserProfile from '../UserProfile';
 
 const Doctor = ({navigation}) => {
   const [news] = useState([
@@ -45,7 +46,7 @@ const Doctor = ({navigation}) => {
         <View style={styles.content}>
           <View style={styles.contentSection}>
             <Gap height={30} />
-            <HomeProfile />
+            <HomeProfile onPress={() => navigation.navigate('UserProfile')} />
             <Gap height={30} />
             <Text style={styles.welcome}>
               Mau konsultasi dengan siapa hari ini?
@@ -97,9 +98,6 @@ const Doctor = ({navigation}) => {
                 />
               );
             })}
-            {/* <NewsItem />
-            <NewsItem />
-            <NewsItem /> */}
             <Gap height={30} />
           </View>
         </View>

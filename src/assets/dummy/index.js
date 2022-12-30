@@ -1,4 +1,4 @@
-import DummyUser from './user.png';
+import DummyUser from './user.jpg';
 import DummyDoctor1 from './doctor1.png';
 import DummyDoctor2 from './doctor2.png';
 import DummyDoctor3 from './doctor3.png';
