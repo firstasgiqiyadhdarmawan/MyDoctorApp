@@ -4,7 +4,7 @@ import {DummyDoctor9} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Button} from '../../atoms';
 
-const DarkProfile = ({onPress, title, desc}) => {
+const DarkProfile = ({onPress}) => {
   return (
     <View style={styles.container}>
       <Button type="icon-only" icon="back-light" onPress={onPress} />
