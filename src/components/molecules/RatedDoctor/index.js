@@ -1,11 +1,11 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {IconStar} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const RatedDoctor = ({profile, name, category}) => {
+const RatedDoctor = ({profile, name, category, onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={profile} style={styles.avatar} />
       <View style={styles.profile}>
         <Text style={styles.name}>{name}</Text>
@@ -19,7 +19,7 @@ const RatedDoctor = ({profile, name, category}) => {
         <IconStar />
         <IconStar />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

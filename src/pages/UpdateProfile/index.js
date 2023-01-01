@@ -1,32 +1,34 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Button, Gap, Header, Input } from '../../components'
-import { colors } from '../../utils'
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {Button, Gap, Header, Input, Profile} from '../../components';
+import {colors} from '../../utils';
 
 const UpdateProfile = ({navigation}) => {
   return (
-    <ScrollView>
-      <Header title="Edit Profile" onPress={() => navigation.goBack()}/>
-      <View style={styles.content}>
-      <Input labelText="Full Name" />
-      <Gap height={24} />
-      <Input labelText="Pekerjaan" />
-      <Gap height={24} />
-      <Input labelText="Email" />
-      <Gap height={24} />
-      <Input labelText="Password" />
-      <Gap height={40} />
-      <Button title="Save Profile" />
+    <View style={styles.page}>
+      <Header title="Edit Profile" onPress={() => navigation.goBack()} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
+          <Profile />
+          <Gap height={26} />
+          <Input labelText="Full Name" />
+          <Gap height={24} />
+          <Input labelText="Pekerjaan" />
+          <Gap height={24} />
+          <Input labelText="Email" />
+          <Gap height={24} />
+          <Input labelText="Password" />
+          <Gap height={40} />
+          <Button title="Save Profile" />
+        </View>
+      </ScrollView>
     </View>
-    </ScrollView>
-  )
-}
+  );
+};
 
-export default UpdateProfile
+export default UpdateProfile;
 
 const styles = StyleSheet.create({
-    content:{
-        color: "yellow",
-        flex: 1,
-    }
-})
+  page: {flex: 1, backgroundColor: colors.white},
+  content: {padding: 40, paddingTop: 0},
+});

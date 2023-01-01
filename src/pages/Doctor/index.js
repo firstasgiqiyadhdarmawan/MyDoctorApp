@@ -17,7 +17,6 @@ import {
   RatedDoctor,
 } from '../../components';
 import {colors, fonts} from '../../utils';
-import UserProfile from '../UserProfile';
 
 const Doctor = ({navigation}) => {
   const [news] = useState([
@@ -76,16 +75,19 @@ const Doctor = ({navigation}) => {
               profile={DummyDoctor1}
               name="Alexa Rachel"
               category="Pediatrician"
+              onPress={() => navigation.navigate('DoctorProfile')}
             />
             <RatedDoctor
               profile={DummyDoctor2}
               name="Sunny Frank"
               category="Dentist"
+              onPress={() => navigation.navigate('DoctorProfile')}
             />
             <RatedDoctor
               profile={DummyDoctor3}
               name="Poe Minn"
               category="Podiatrist"
+              onPress={() => navigation.navigate('DoctorProfile')}
             />
             <Text style={styles.sectionLabel2}>Good News</Text>
             {news.map(news => {
