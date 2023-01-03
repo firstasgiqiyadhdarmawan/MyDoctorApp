@@ -1,0 +1,10 @@
+
+runtime: python37
+
+env_variables:
+  SQL_USERNAME: root
+  SQL_PASSWORD: 123
+  SQL_DATABASE_NAME: yourney
+  SQL_CONNECTION_NAME: 
+  JWT_SECRET:
+
