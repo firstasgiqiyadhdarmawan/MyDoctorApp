@@ -23,9 +23,7 @@ ACCESS_EXPIRES = timedelta(hours=1)
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 API_URL = '/static/spec.json'  # Our API url (can of course be a local resource)
 
-
 user_service = UserService(db_user,db_password,db_name,db_connection_name)
-# data_service = DatasetService(db_user,db_password,db_name,db_connection_name)
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1000 * 1000
@@ -68,7 +66,7 @@ def check_if_token_revoked(jwt_header, jwt_payload: dict) -> bool:
 
 @app.route("/", methods=["GET"])
 def hello():
-    return "Hello, World This Is Yourney!"
+    return "Hello, World This Is MyDoctorAPP!"
 
 # cek db user
 @app.route('/db')
