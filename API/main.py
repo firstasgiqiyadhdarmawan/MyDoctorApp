@@ -1,14 +1,12 @@
 import os
 import re
 # import threading
-# import pymysql
-from flask_mysqldb import MySQL
-import MySQLdb.cursors
+import pymysql
 import base64
 import uuid
-import io
 import json
-from flask import Flask, request, jsonify, send_file, session
+import io
+from flask import Flask, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from flask_jwt_extended import *
 from passlib.hash import sha256_crypt
@@ -17,19 +15,14 @@ from datetime import datetime, timedelta, timezone
 # from services.user import UserService
 # from services.dataset import DatasetService
 
-# untuk user dapat mengirimkan foto untuk profile picture
+db_user = os.environ.get('CLOUD_SQL_USERNAME')
+db_password = os.environ.get('CLOUD_SQL_PASSWORD')
+db_name = os.environ.get('CLOUD_SQL_DATABASE_NAME')
+db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-ACCESS_EXPIRES = timedelta(hours=1)
-# user_service = UserService(db_user,db_password,db_name,db_connection_name)
-# data_service = DatasetService(db_user,db_password,db_name,db_connection_name)
 
 app = Flask(__name__)
-app.secret_key = 'your secret key'
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'mydoctor'
-mysql = MySQL(app)
+
 
 # rute test
 @app.route('/', methods = ['GET'])
@@ -68,40 +61,64 @@ def getStats():
         lines = json.loads(f.read())
 
     return jsonify(lines)
-
-# rute untuk login
-@app.route('/login', methods=['GET','POST'])
+ 
+#login
+@app.route("/login",methods=["POST", "GET"])
 def login():
     try:
         request_data = request.get_json()
-        email = request_data['username']
+        email = request_data['email']
         password = request_data['password']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM user WHERE email = %s', (email, ))
-        user = cursor.fetchone()
-        cursor.close()
+        #connect database
+        if os.environ.get('GAE_ENV') == 'standard':
+            unix_socket = '/cloudsql/{}'.format(db_connection_name)
+            cnx = pymysql.connect(user=db_user, password=db_password,
+                                unix_socket=unix_socket, db=db_name)
+
+        #querying sql
+        with cnx.cursor() as cursor:
+            cursor.execute('SELECT * FROM user WHERE email = %s', (email, ))
+            user = cursor.fetchone()
+        cnx.close()
+
         if not user:
-            return jsonify({'status': 'failed', 'message': 'no active user found'}),401 
-         
-        if not sha256_crypt.verify(password, user[5]):
-            return jsonify({'status': 'failed', 'message': 'either email or password is invalid'}),401    
+            return jsonify({'status': 'failed', 'message': 'no active user found'}),401
+
+        if not sha256_crypt.verify(password, user[6]):
+            return jsonify({'status': 'failed', 'message': 'either email or password is invalid'}),401
         
-        return jsonify (
+        # # generate new token
+        # expires = timedelta(days=1)
+        # expires_refresh = timedelta(days=3)
+        # identity = {
+        #     'id_user': user[0],
+        #     'email': user[5],
+        #     'status':user[9]
+        # }
+
+        # access_token = create_access_token(identity=identity, fresh=True, expires_delta=expires)
+        # refresh_token = create_refresh_token(identity=identity, expires_delta=expires_refresh)
+        return jsonify(
             {
-                "status" : "Success",
-                "user" :{
-                    "email" : user[4],
-                    "Full Name" : user[3]
+                'status': 'success',
+                # 'access': access_token,
+                # 'refresh': refresh_token,
+                'user':{
+                    'email': user[5],
+                    'user_pic': user[7],
+                    'fullName': user[3],
+                    'pekerjaan': user[4]
                 }
             }
         ),201
-    
+
     except Exception as e:
-        return jsonify (
+        return jsonify(
             {
-                "msg" : str(e)
+                "message": str(e)
             }
         ),500
+
            
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)
