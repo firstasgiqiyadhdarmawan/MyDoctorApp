@@ -1,14 +1,19 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Gap, Header, Input} from '../../components';
 import {colors} from '../../utils';
 
 const Register = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
+  const [profession, setProfession] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
-    <ScrollView style={styles.page}>
-      <View style={styles.page}>
-        <Header onPress={() => navigation.goBack()} title="Daftar Akun" />
-        <View style={styles.content}>
+    <View style={styles.page}>
+      <Header onPress={() => navigation.goBack()} title="Daftar Akun" />
+      <View style={styles.content}>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Input labelText={'Full Name'} />
           <Gap height={24} />
           <Input labelText={'Pekerjaan'} />
@@ -21,9 +26,9 @@ const Register = ({navigation}) => {
             title={'Continue'}
             onPress={() => navigation.replace('UploadPhoto')}
           />
-        </View>
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
