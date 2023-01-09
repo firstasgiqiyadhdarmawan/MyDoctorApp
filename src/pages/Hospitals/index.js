@@ -1,5 +1,12 @@
-import React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import axios from 'axios';
+import React, {useEffect} from 'react';
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {
   DummyHospital1,
   DummyHospital2,
@@ -10,14 +17,52 @@ import {ListHospital} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Hospitals = () => {
+  const [data, setData] = React.useState('');
+
+  const geData = async () => {
+    try {
+      await axios
+        .get('https://dekontaminasi.com/api/id/covid19/hospitals')
+        .then(response => {
+          setData(response);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+
+    const response = await axios.get(
+      'https://dekontaminasi.com/api/id/covid19/hospitals',
+    );
+    setData(response.data);
+  };
+
+  useEffect(() => {
+    geData();
+  }, []);
+  console.log(data);
+
+  var card = [];
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    card.push(
+      <ListHospital
+        type="Rumah Sakit"
+        name={element.name}
+        address={element.address}
+        pic={DummyHospital1}
+      />,
+    );
+  }
+
   return (
     <View style={styles.page}>
       <ImageBackground source={ILHospitalBG} style={styles.background}>
         <Text style={styles.title}>Nearby Hospitals</Text>
         <Text style={styles.desc}>3 tersedia</Text>
       </ImageBackground>
-      <View style={styles.content}>
-        <ListHospital
+      <ScrollView style={styles.content}>
+        <View style={styles.content}>
+          {/* <ListHospital
           type="Rumah Sakit"
           name="Citra Bunga Merdeka"
           address="Jln. Surya Sejahtera 20"
@@ -34,8 +79,10 @@ const Hospitals = () => {
           name="Tingkatan Paling Atas"
           address="Jln. Surya Sejahtera 20"
           pic={DummyHospital3}
-        />
-      </View>
+        /> */}
+          {card}
+        </View>
+      </ScrollView>
     </View>
   );
 };
