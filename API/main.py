@@ -19,7 +19,7 @@ from passlib.hash import sha256_crypt
 from flask import Flask, jsonify, request
 import pymysql
 import re
-from services.user import UserService
+# from services.user import UserService
 
 db_user = os.environ.get('CLOUD_SQL_USERNAME')
 db_password = os.environ.get('CLOUD_SQL_PASSWORD')
@@ -47,6 +47,27 @@ def db():
         return jsonify(users)
     else:
         return 'Invalid request'
+    
+    
+@app.route('/getHospital')
+def getHospital():
+    #sudah okay
+    hospital = []
+    if request.method == 'GET':
+        if os.environ.get('GAE_ENV') == 'standard':
+            # If deployed, use the local socket interface for accessing Cloud SQL
+            unix_socket = '/cloudsql/{}'.format(db_connection_name)
+            cnx = pymysql.connect(user=db_user, password=db_password,
+                                unix_socket=unix_socket, db=db_name)
+        with cnx.cursor() as cursor:
+            cursor.execute('SELECT * FROM hospital;')
+            for row in cursor:
+                hospital.append({'id_user': row[0], 'image': row[1], 'name': row[2], 'address': row[3], 'region': row[4], 'phone': row[5], 'province': row[6]})
+            cnx.close()
+        return jsonify(hospital)
+    else:
+        return 'Invalid request'
+
 
 #register user + initialiazing kategori
 @app.route("/register",methods=["POST", "GET"])
