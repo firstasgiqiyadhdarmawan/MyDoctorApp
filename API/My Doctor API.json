@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "d73e09ed-ccb7-4833-9039-f0068382e7ec",
+		"name": "MyDoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25171798"
+	},
+	"item": [
+		{
+			"name": "Hello World",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tugasmd.as.r.appspot.com/",
+					"protocol": "https",
+					"host": [
+						"tugasmd",
+						"as",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hello World",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tugasmd.as.r.appspot.com/",
+							"protocol": "https",
+							"host": [
+								"tugasmd",
+								"as",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "Hello This is My Doctor App"
+				}
+			]
+		},
+		{
+			"name": "get database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tugasmd.as.r.appspot.com/db",
+					"protocol": "https",
+					"host": [
+						"tugasmd",
+						"as",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"db"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get database",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tugasmd.as.r.appspot.com/db",
+							"protocol": "https",
+							"host": [
+								"tugasmd",
+								"as",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"db"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"created_time\": \"Wed, 11 Jan 2023 11:58:09 GMT\",\r\n        \"email\": \"renaldi@gmail.com\",\r\n        \"id_user\": 8,\r\n        \"password\": \"$5$rounds=535000$W/8e3mv3kaEw8kWn$hcAiDBIwU4Uj9N0xM1MlR9S0H.9D6.zBJYYzQzwHnV1\",\r\n        \"pekerjaan\": \"mahasiswa\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Hoax",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dekontaminasi.com/api/id/covid19/hoaxes",
+					"protocol": "https",
+					"host": [
+						"dekontaminasi",
+						"com"
+					],
+					"path": [
+						"api",
+						"id",
+						"covid19",
+						"hoaxes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Hoax",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dekontaminasi.com/api/id/covid19/hoaxes",
+							"protocol": "https",
+							"host": [
+								"dekontaminasi",
+								"com"
+							],
+							"path": [
+								"api",
+								"id",
+								"covid19",
+								"hoaxes"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"title\": \"[SALAH] Virus Covid-19 Sengaja Dikembangkan dan Ditingkatkan Kemampuannya\",\r\n        \"url\": \"https://turnbackhoax.id/2022/12/19/salah-virus-covid-19-sengaja-dikembangkan-dan-ditingkatkan-kemampuannya/\",\r\n        \"timestamp\": 1671382800236\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Hospital",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tugasmd.as.r.appspot.com/getHospital",
+					"protocol": "https",
+					"host": [
+						"tugasmd",
+						"as",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"getHospital"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Hospital",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tugasmd.as.r.appspot.com/getHospital",
+							"protocol": "https",
+							"host": [
+								"tugasmd",
+								"as",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"getHospital"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"address\": \"KOTA BANDA ACEH, ACEH\",\r\n        \"id_user\": 1,\r\n        \"image\": \"RS UMUM DAERAH  DR. ZAINOEL ABIDIN\",\r\n        \"name\": \"JL. TGK DAUD BEUREUEH, NO. 108 B. ACEH\",\r\n        \"phone\": \"Aceh\",\r\n        \"province\": \"https://www.garnesia.com/images/vendor/v5071.jpg\",\r\n        \"region\": \"(0651) 34565\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get News",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dekontaminasi.com/api/id/covid19/news",
+					"protocol": "https",
+					"host": [
+						"dekontaminasi",
+						"com"
+					],
+					"path": [
+						"api",
+						"id",
+						"covid19",
+						"news"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get News",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dekontaminasi.com/api/id/covid19/news",
+							"protocol": "https",
+							"host": [
+								"dekontaminasi",
+								"com"
+							],
+							"path": [
+								"api",
+								"id",
+								"covid19",
+								"news"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Mulai Bermunculan ! Kenali Gejala Subvarian Omicron BN.1 yang Ternyata Lebih Menular\",\n    \"url\": \"https://poptren.suara.com/read/2022/11/18/203300/mulai-bermunculan-kenali-gejala-subvarian-omicron-bn1-yang-ternyata-lebih-menular\",\n    \"timestamp\": 1673443980187\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Stat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dekontaminasi.com/api/id/covid19/stats",
+					"protocol": "https",
+					"host": [
+						"dekontaminasi",
+						"com"
+					],
+					"path": [
+						"api",
+						"id",
+						"covid19",
+						"stats"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Stat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dekontaminasi.com/api/id/covid19/stats",
+							"protocol": "https",
+							"host": [
+								"dekontaminasi",
+								"com"
+							],
+							"path": [
+								"api",
+								"id",
+								"covid19",
+								"stats"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"type\": \"country\",\r\n  \"name\": \"Indonesia\",\r\n  \"timestamp\": 1673136000000,\r\n  \"numbers\": {\r\n    \"infected\": 6723546,\r\n    \"recovered\": 6554495,\r\n    \"fatal\": 160683\r\n  }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\" : \"renaldi\",\r\n    \"pekerjaan\" : \"mahasiswa\",\r\n    \"email\": \"renaldi@gmail.com\",\r\n    \"password\" : \"Test123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tugasmd.as.r.appspot.com/register",
+					"protocol": "https",
+					"host": [
+						"tugasmd",
+						"as",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\" : \"renaldi\",\r\n    \"pekerjaan\" : \"mahasiswa\",\r\n    \"email\": \"renaldi@gmail.com\",\r\n    \"password\" : \"Test123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tugasmd.as.r.appspot.com/register",
+							"protocol": "https",
+							"host": [
+								"tugasmd",
+								"as",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"sukses\",\n    \"email\": \"renaldi@gmail.com\",\n    \"full_name\": \"renaldi\",\n    \"pekerjaan\": \"mahasiswa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"renaldi@gmail.com\",\r\n    \"password\" : \"Test123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tugasmd.as.r.appspot.com/login",
+					"protocol": "https",
+					"host": [
+						"tugasmd",
+						"as",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"renaldi@gmail.com\",\r\n    \"password\" : \"Test123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tugasmd.as.r.appspot.com/login",
+							"protocol": "https",
+							"host": [
+								"tugasmd",
+								"as",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"email\": \"renaldi@gmail.com\",\n        \"full_name\": \"renaldi\",\n        \"iduser\": 8,\n        \"pekerjaan\": \"mahasiswa\",\n        \"user_pic\": null\n    }\n}"
+				}
+			]
+		}
+	]
+}
