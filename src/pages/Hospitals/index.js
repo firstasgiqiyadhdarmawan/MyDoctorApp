@@ -22,7 +22,7 @@ const Hospitals = () => {
   const geData = async () => {
     try {
       await axios
-        .get('https://dekontaminasi.com/api/id/covid19/hospitals')
+        .get('https://tugasmd.as.r.appspot.com/getHospital')
         .then(response => {
           setData(response);
         });
@@ -31,7 +31,7 @@ const Hospitals = () => {
     }
 
     const response = await axios.get(
-      'https://dekontaminasi.com/api/id/covid19/hospitals',
+      'https://tugasmd.as.r.appspot.com/getHospital',
     );
     setData(response.data);
   };
@@ -49,7 +49,7 @@ const Hospitals = () => {
         type="Rumah Sakit"
         name={element.name}
         address={element.address}
-        pic={DummyHospital1}
+        pic={element.picture}
       />,
     );
   }

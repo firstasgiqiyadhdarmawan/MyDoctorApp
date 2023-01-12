@@ -62,7 +62,7 @@ def getHospital():
         with cnx.cursor() as cursor:
             cursor.execute('SELECT * FROM hospital;')
             for row in cursor:
-                hospital.append({'id_user': row[0], 'image': row[1], 'name': row[2], 'address': row[3], 'region': row[4], 'phone': row[5], 'province': row[6]})
+                hospital.append({'id_hospital': row[0], 'image': row[6], 'name': row[1], 'address': row[2], 'region': row[3], 'phone': row[4], 'province': row[5]})
             cnx.close()
         return jsonify(hospital)
     else:
