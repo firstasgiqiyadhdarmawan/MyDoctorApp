@@ -49,7 +49,9 @@ const Hospitals = () => {
         type="Rumah Sakit"
         name={element.name}
         address={element.address}
-        pic={element.picture}
+        pic={element.image}
+        region={element.region}
+        phone={element.phone}
       />,
     );
   }
@@ -57,8 +59,7 @@ const Hospitals = () => {
   return (
     <View style={styles.page}>
       <ImageBackground source={ILHospitalBG} style={styles.background}>
-        <Text style={styles.title}>Nearby Hospitals</Text>
-        <Text style={styles.desc}>3 tersedia</Text>
+
       </ImageBackground>
       <ScrollView style={styles.content}>
         <View style={styles.content}>
